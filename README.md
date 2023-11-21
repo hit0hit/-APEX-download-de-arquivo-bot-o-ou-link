@@ -66,7 +66,7 @@ FIM;
 
 ---
 
-##Botão
+## Botão
  - No painel de propriedades, na seção “Comportamento”, selecione a “Ação” de “Redirecionar para URL”.
 ```
 f?p=&APP_ID.:1:&APP_SESSION.:APPLICATION_PROCESS=GET_ID:::FILE_ID:MEU_ID
@@ -77,10 +77,10 @@ select
 from CELL_BOLETO B
  ```
 
-##Link
+## Link
 ```
 <a href="f?p=&APP_ID.:1:&APP_SESSION.:APPLICATION_PROCESS=GET_FILE:::FILE_ID:MEU_ID">Baixar</a>
 ```
 
-##Para mais informação:
+## Para mais informação:
 https://oracle-base.com/articles/misc/apex-tips-file-download-from-a-button-or-link
