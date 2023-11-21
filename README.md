@@ -49,14 +49,14 @@ END;
    - **Caminho:** Componentes Compartilhados > Processos de Aplicativo
    - **Ação:** Clique no botão "Criar".
    - **Detalhes do Processo:**
-      - **Nome:** GET_FILE
+      - **Nome:** GET_ID
       - **Sequência:** {aceitar o padrão}
       - **Ponto de processo:** Retorno de chamada do Ajax: execute este processo de aplicativo quando solicitado por um processo de página.
    - Clique no botão "Avançar".
    - Insira o PL/SQL necessário para realizar o download.
 ```
 BEGIN 
-  get_file(:FILE_ID); 
+  get_id(:FILE_ID); 
 FIM;
 ```
    - Clique no botão "Avançar".
@@ -69,8 +69,12 @@ FIM;
 ##Botão
  - No painel de propriedades, na seção “Comportamento”, selecione a “Ação” de “Redirecionar para URL”.
 ```
-f?p=&APP_ID.:1:&APP_SESSION.:APPLICATION_PROCESS=GET_FILE:::FILE_ID:MEU_ID
+f?p=&APP_ID.:1:&APP_SESSION.:APPLICATION_PROCESS=GET_ID:::FILE_ID:MEU_ID
 ```
+select 
+       'f?p=&APP_ID.:1:&APP_SESSION.:APPLICATION_PROCESS=GET_FILE:::FILE_ID:'||B.ID_BOLETO||'' AS BAIXAR
+from CELL_BOLETO B
+  
 ##Link
 ```
 <a href="f?p=&APP_ID.:1:&APP_SESSION.:APPLICATION_PROCESS=GET_FILE:::FILE_ID:MEU_ID">Baixar</a>
